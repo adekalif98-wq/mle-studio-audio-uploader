@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0c0b13">
+  <title>MLE STUDIO | Audio Uploader</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="glow glow-a"></div><div class="glow glow-b"></div>
+  <header class="topbar">
+    <div class="brand-mark">🌙</div>
+    <div><div class="brand">MLE <span>STUDIO</span></div><div class="subbrand">ROBLOX AUDIO UPLOADER</div></div>
+    <div class="pill"><span class="dot"></span> WEB PANEL</div>
+  </header>
+
+  <main class="layout">
+    <section class="intro">
+      <div class="eyebrow">CREATOR TOOLS / AUDIO</div>
+      <h1>Bring your sound<br><span>to Roblox.</span></h1>
+      <p>Kelola informasi audio dan siapkan file untuk proses upload Roblox secara aman.</p>
+      <div class="mini-stats">
+        <div><b>20 MB</b><span>BATAS FILE UI</span></div>
+        <div><b>MP3 / WAV</b><span>FORMAT UMUM</span></div>
+        <div><b>API</b><span>BACKEND READY</span></div>
+      </div>
+      <div class="notice"><strong>Catatan hak audio</strong><br>Gunakan musik buatan sendiri atau yang kamu punya izin untuk digunakan. Moderasi dan persyaratan Roblox tetap berlaku.</div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head"><div><div class="eyebrow">UPLOAD CENTER</div><h2>New audio</h2></div><div class="icon">♫</div></div>
+      <form id="uploadForm">
+        <label for="title">Judul musik</label>
+        <input id="title" name="title" maxlength="100" placeholder="Contoh: MLE Opening Theme" required>
+        <label for="artist">Artis / kreator <span class="optional">opsional</span></label>
+        <input id="artist" name="artist" maxlength="100" placeholder="Nama artis">
+        <label for="ownerId">Roblox Creator ID <span class="help">User ID atau Group ID sesuai pemilik aset</span></label>
+        <input id="ownerId" name="ownerId" inputmode="numeric" pattern="[0-9]+" placeholder="Masukkan ID numerik" required>
+        <label for="sourceUrl">Tautan sumber <span class="optional">opsional</span></label>
+        <input id="sourceUrl" name="sourceUrl" type="url" placeholder="YouTube / TikTok / Spotify / SoundCloud">
+        <p class="hint">Tautan dicatat sebagai referensi saja; website ini tidak mengekstrak audio dari platform tersebut.</p>
+
+        <label>File audio</label>
+        <label class="dropzone" for="audio">
+          <span class="upload-icon">↑</span><b id="fileLabel">Pilih file audio</b><span>MP3, WAV, OGG, FLAC · Maks. 20 MB</span>
+        </label>
+        <input id="audio" name="audio" type="file" accept=".mp3,.wav,.ogg,.flac,audio/*" required hidden>
+        <label class="check"><input type="checkbox" id="rightsConfirmed"><span>Saya memiliki hak atau izin untuk menggunakan audio ini.</span></label>
+        <button id="submitBtn" type="submit"><span>UPLOAD / VALIDATE</span><b>↗</b></button>
+      </form>
+      <div id="result" class="result" aria-live="polite" hidden></div>
+      <div class="secure-line">🔒 API Key tidak dimasukkan di halaman ini.</div>
+    </section>
+  </main>
+  <footer><span>© MLE STUDIO</span><span>CREATED FOR RESPONSIBLE AUDIO UPLOADS</span></footer>
+  <script src="/app.js"></script>
+</body>
+</html>
